@@ -4,6 +4,8 @@
  */
 package notasponderadas_2gti;
 
+import java.awt.Color;
+
 /**
  *
  * @author Professor
@@ -55,11 +57,12 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jtf_Media = new javax.swing.JTextField();
         jtf_SomaDosPesos = new javax.swing.JTextField();
+        jb_Sair = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jb_DesabilitarMediaComPesos = new javax.swing.JButton();
         jb_Calcular = new javax.swing.JButton();
         jb_VerificarPeso = new javax.swing.JButton();
         jb_Limpar = new javax.swing.JButton();
+        jcb_MediaComPesos = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,7 +85,7 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -114,6 +117,11 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
 
         jcb_Nota1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jcb_Nota1.setText("Nota1");
+        jcb_Nota1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_Nota1ActionPerformed(evt);
+            }
+        });
 
         jcb_Nota2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jcb_Nota2.setText("Nota 2");
@@ -136,11 +144,11 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
                 .addGroup(HabilitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(HabilitadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jcb_Nota1)
                         .addComponent(jcb_Nota2)
                         .addComponent(jcb_Nota3)
                         .addComponent(jcb_Nota4)
-                        .addComponent(jcb_Nota5)))
+                        .addComponent(jcb_Nota5)
+                        .addComponent(jcb_Nota1, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         HabilitadosLayout.setVerticalGroup(
@@ -158,7 +166,7 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
                 .addComponent(jcb_Nota4)
                 .addGap(18, 18, 18)
                 .addComponent(jcb_Nota5)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -166,6 +174,12 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Notas");
+
+        jtf_Nota1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_Nota1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,11 +223,30 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Pesos");
 
+        jtf_Peso1.setText("0");
+        jtf_Peso1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_Peso1ActionPerformed(evt);
+            }
+        });
+
+        jtf_Peso2.setText("0");
+        jtf_Peso2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_Peso2ActionPerformed(evt);
+            }
+        });
+
+        jtf_Peso3.setText("0");
+
+        jtf_Peso4.setText("0");
         jtf_Peso4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtf_Peso4ActionPerformed(evt);
             }
         });
+
+        jtf_Peso5.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -257,6 +290,21 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("Média =");
 
+        jtf_Media.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_MediaActionPerformed(evt);
+            }
+        });
+
+        jb_Sair.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jb_Sair.setText("Sair");
+        jb_Sair.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_SairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -268,25 +316,24 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
                 .addComponent(jtf_Media, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98)
                 .addComponent(jtf_SomaDosPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtf_Media, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_SomaDosPesos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jb_Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jb_DesabilitarMediaComPesos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jb_DesabilitarMediaComPesos.setText("DESABILITAR MÉDIA COM PESOS");
-        jb_DesabilitarMediaComPesos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jb_Calcular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jb_Calcular.setText("CALCULAR");
@@ -300,6 +347,11 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jb_VerificarPeso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jb_VerificarPeso.setText("VERIFICAR PESOS");
         jb_VerificarPeso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jb_VerificarPeso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_VerificarPesoActionPerformed(evt);
+            }
+        });
 
         jb_Limpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jb_Limpar.setText("LIMPAR");
@@ -310,27 +362,36 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
             }
         });
 
+        jcb_MediaComPesos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jcb_MediaComPesos.setText("Média Com Pesos");
+        jcb_MediaComPesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_MediaComPesosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jb_DesabilitarMediaComPesos, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
-                    .addComponent(jb_VerificarPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jb_Limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jb_VerificarPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                        .addComponent(jb_Calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_Limpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jcb_MediaComPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jb_DesabilitarMediaComPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jcb_MediaComPesos)
                 .addGap(18, 18, 18)
                 .addComponent(jb_VerificarPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jb_Calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jb_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,13 +423,13 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addComponent(Habilitados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -380,17 +441,102 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
     }//GEN-LAST:event_jtf_Peso4ActionPerformed
 
     private void jb_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_LimparActionPerformed
-        // TODO add your handling code here:
+      //Limpar o modelo matematico 
+        cnp.Limpar();
+       //Limpar a interface grafica
+       jtf_Nota1.setText(" ");
+       jtf_Nota2.setText(" ");
+       jtf_Nota3.setText(" ");
+       jtf_Nota4.setText(" ");
+       jtf_Nota5.setText(" ");
+       jtf_Peso1.setText(" ");
+       jtf_Peso2.setText(" ");
+       jtf_Peso3.setText(" ");
+       jtf_Peso4.setText(" ");
+       jtf_Peso5.setText(" ");
+       jtf_Media.setText(" ");
+       jtf_SomaDosPesos.setText(" ");
+       jcb_Nota1.setSelected(false);
+       jcb_Nota2.setSelected(false);
+       jcb_Nota3.setSelected(false);
+       jcb_Nota4.setSelected(false);
+       jcb_Nota5.setSelected(false);
+       jcb_MediaComPesos.setSelected(false);
+      
     }//GEN-LAST:event_jb_LimparActionPerformed
 
     private void jb_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CalcularActionPerformed
       cnp.setNota1(   Double.parseDouble(jtf_Nota1.getText()));
        //Pega o valor em forma de texto da interface e transforma em double
       cnp.setNota2(   Double.parseDouble(jtf_Nota2.getText()));
+      cnp.setNota3(   Double.parseDouble(jtf_Nota3.getText()));
+      cnp.setNota4(   Double.parseDouble(jtf_Nota4.getText()));
+      cnp.setNota5(   Double.parseDouble(jtf_Nota5.getText()));
+    
+      //verificar se o calculo e ponderado
+      if (cnp.isNotasPonderadas() == true){
+      cnp.setPeso1(   Double.parseDouble(jtf_Peso1.getText()));
+      cnp.setPeso2(   Double.parseDouble(jtf_Peso2.getText()));
+      cnp.setPeso3(   Double.parseDouble(jtf_Peso3.getText()));
+      cnp.setPeso4(   Double.parseDouble(jtf_Peso4.getText()));
+      cnp.setPeso5(   Double.parseDouble(jtf_Peso5.getText()));
+
+      }
+      //Falta arrumar essa linha
+     // if(cnp.setNota1(" ")){ jtf_Nota1.;}
       cnp.calcularMedia();
       jtf_Media.setText(String.valueOf(cnp.getMedia()));
 
     }//GEN-LAST:event_jb_CalcularActionPerformed
+
+    private void jtf_Peso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_Peso1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_Peso1ActionPerformed
+
+    private void jtf_Peso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_Peso2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_Peso2ActionPerformed
+
+    private void jcb_MediaComPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_MediaComPesosActionPerformed
+        if(jcb_MediaComPesos.isSelected() == true){
+            cnp.setNotasPonderadas(true);
+            jcb_MediaComPesos.setSelected(true);
+                    } else { 
+             cnp.setNotasPonderadas(false);
+            jcb_MediaComPesos.setSelected(false);
+        }
+    }//GEN-LAST:event_jcb_MediaComPesosActionPerformed
+
+    private void jb_VerificarPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_VerificarPesoActionPerformed
+       double soma10;
+       cnp.setPeso1(Double.parseDouble(jtf_Peso1.getText()));
+       cnp.setPeso2(Double.parseDouble(jtf_Peso2.getText()));
+       cnp.setPeso3(Double.parseDouble(jtf_Peso3.getText()));
+       cnp.setPeso4(Double.parseDouble(jtf_Peso4.getText()));
+       cnp.setPeso5(Double.parseDouble(jtf_Peso5.getText()));
+       soma10 = cnp.getPeso1() +  cnp.getPeso2() + cnp.getPeso3() + cnp.getPeso4() + cnp.getPeso5();
+       if(soma10 != 10){
+        jtf_SomaDosPesos.setBackground(Color.red);
+        jtf_SomaDosPesos.setForeground(Color.black);
+       } else {jtf_SomaDosPesos.setBackground(Color.green); }
+       jtf_SomaDosPesos.setText(String.valueOf(soma10));
+    }//GEN-LAST:event_jb_VerificarPesoActionPerformed
+
+    private void jtf_Nota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_Nota1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_Nota1ActionPerformed
+
+    private void jcb_Nota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_Nota1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_Nota1ActionPerformed
+
+    private void jtf_MediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_MediaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_MediaActionPerformed
+
+    private void jb_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_SairActionPerformed
+    dispose();
+    }//GEN-LAST:event_jb_SairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -442,9 +588,10 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JButton jb_Calcular;
-    private javax.swing.JButton jb_DesabilitarMediaComPesos;
     private javax.swing.JButton jb_Limpar;
+    private javax.swing.JButton jb_Sair;
     private javax.swing.JButton jb_VerificarPeso;
+    private javax.swing.JCheckBox jcb_MediaComPesos;
     private javax.swing.JCheckBox jcb_Nota1;
     private javax.swing.JCheckBox jcb_Nota2;
     private javax.swing.JCheckBox jcb_Nota3;

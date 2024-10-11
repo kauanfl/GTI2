@@ -183,9 +183,13 @@ public class CalcularNotasPonderadas {
  //Metodos de negocio
     public void calcularMedia() {
         if (isNotasPonderadas() == false){
-    this.media = (this.nota1 + this.nota2) / 2;
+    this.media = (this.nota1 + this.nota2 + this.nota3 + this.nota4 + this.nota5 ) /5;
     } else {
-    this.media = ((this.nota1 * this.peso1) + (this.nota2 * this.peso2)) / 10;
+    this.media = ((this.nota1 * this.peso1) +
+                  (this.nota2 * this.peso2) +
+                  (this.nota3 * this.peso3) + 
+                  (this.nota4 * this.peso4) +
+                  (this.nota5 * this.peso5))  / 10;
     }
   }
 }
